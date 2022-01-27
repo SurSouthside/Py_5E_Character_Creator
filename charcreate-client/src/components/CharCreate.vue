@@ -8,13 +8,19 @@
     <input type="text" id="charcreate_name"/>
     <br/>
     <label for="charcreate_race">Race:</label>
-    <select id="charcreate_race"/>
+    <select v-model="race" id="charcreate_race">
+        <option>Dwarf</option>
+        <option>Elf</option>
+    </select>
     <br/>
     <br/>
     <!--Step 1 end-->
     <!--Step 2 start-->
     <label for="charcreate_class">Class:</label>
-    <select id="charcreate_class"/>
+   <select v-model="race" id="charcreate_class">
+        <option>Barbarian</option>
+        <option>Bard</option>
+    </select>
     <br/>
     <label for="charcreate_level">Level:</label>
     <select id="charcreate_level"/>
@@ -67,6 +73,23 @@
     <input type="radio" id="charcreate_align_ne" name="alignment" value="ne">
     <label for="charcreate_align_ce">Chaotic Evil:</label>
     <input type="radio" id="charcreate_align_ce" name="alignment" value="ce">
+    <br/>
+    <label for="charcreate_background">Background:</label>
+    <select v-model="background" id="charcreate_background">
+        <option>Barbarian</option>
+        <option>Bard</option>
+    </select>
+    <br/>
+    <label for="charcreate_ideals">Ideals:</label>
+    <textarea v-model="ideals" id="charcreate_ideals"></textarea>
+    <br/>
+    <label for="charcreate_bonds">Bonds:</label>
+    <textarea v-model="bonds" id="charcreate_bonds"></textarea>
+    <br/>
+    <label for="charcreate_flaws">Flaws:</label>
+    <textarea v-model="flaws" id="charcreate_flaws"></textarea>
+    <br/>
+    <br/>
     <!--Step 4 end-->
     <!--Step 5 start-->
     <!--Step 5 end-->
