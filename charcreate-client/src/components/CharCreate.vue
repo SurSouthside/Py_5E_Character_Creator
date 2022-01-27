@@ -33,7 +33,7 @@
     <br/>
     <!--Step 2 end-->
     <!--Step 3 start-->
-    <span>Ability Scores</span>
+    <span>Ability Scores</span><button @click="generateAbilityScores">Generate Ability Scores</button>
     <br/>
     <label for="charcreate_str">Strength:</label>
     <input type="text" id="charcreate_str"/>
@@ -76,8 +76,8 @@
     <br/>
     <label for="charcreate_background">Background:</label>
     <select v-model="background" id="charcreate_background">
-        <option>Barbarian</option>
-        <option>Bard</option>
+        <option>Acolyte</option>
+        <option>Charlatan</option>
     </select>
     <br/>
     <label for="charcreate_ideals">Ideals:</label>
@@ -100,6 +100,11 @@
 
 <script>
 export default {
-  name: 'CharCreate'
-}
+  name: 'CharCreate',
+  methods:{
+    generateAbilityScores() {
+        alert("Hello World!");
+    }
+  }
+};
 </script>
