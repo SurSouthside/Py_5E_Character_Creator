@@ -5,7 +5,7 @@
     <p>Character Creator</p>
     <!--Step 1 start-->
     <label for="charcreate_name">Name:</label>
-    <input type="text" id="charcreate_name"/>
+    <input type="text" id="charcreate_name" v-model="inputValue"/>
     <br/>
     <label for="charcreate_race">Race:</label>
     <select v-model="race" id="charcreate_race">
@@ -101,9 +101,15 @@
 <script>
 export default {
   name: 'CharCreate',
+  data(){
+    return {
+        inputValue: "",
+    }
+  },
   methods:{
     generateAbilityScores() {
-        alert("Hello World!");
+        alert(this.inputValue);
+        console.log(this.inputValue);
     }
   }
 };
