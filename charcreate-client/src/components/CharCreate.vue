@@ -113,6 +113,8 @@ export default {
     },
     generateAbilityScore(){
         alert("Hello");
+        this.inputValue = "World";
+        alert(this.inputValue);
     }
   }
 };

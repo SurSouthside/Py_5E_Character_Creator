@@ -2,15 +2,18 @@
   <!--<img alt="Vue logo" src="./assets/logo.png">-->
   <!--<HelloWorld msg="Welcome to Your Vue.js App"/>-->
   <CharCreate/>
+  <Test/>
 </template>
 
 <script>
 import CharCreate from './components/CharCreate.vue'
+import Test from './components/Test.vue'
 
 export default {
   name: 'App',
   components: {
-    CharCreate
+    CharCreate,
+    Test
   }
 }
 </script>
