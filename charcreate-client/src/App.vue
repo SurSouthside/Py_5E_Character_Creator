@@ -3,12 +3,14 @@
   <!--<HelloWorld msg="Welcome to Your Vue.js App"/>-->
   <CharCreate/>
   <CharacterBasics/>
+  <CharacterClass/>
   <AbilityScores/>
 </template>
 
 <script>
 import CharCreate from './components/CharCreate.vue'
 import CharacterBasics from './components/CharacterBasics.vue'
+import CharacterClass from './components/CharacterClass.vue'
 import AbilityScores from './components/AbilityScores.vue'
 
 export default {
@@ -16,6 +18,7 @@ export default {
   components: {
     CharCreate,
     CharacterBasics,
+    CharacterClass,
     AbilityScores
   }
 }
