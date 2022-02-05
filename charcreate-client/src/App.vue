@@ -2,17 +2,20 @@
   <!--<img alt="Vue logo" src="./assets/logo.png">-->
   <!--<HelloWorld msg="Welcome to Your Vue.js App"/>-->
   <CharCreate/>
+  <CharacterBasics/>
   <AbilityScores/>
 </template>
 
 <script>
 import CharCreate from './components/CharCreate.vue'
+import CharacterBasics from './components/CharacterBasics.vue'
 import AbilityScores from './components/AbilityScores.vue'
 
 export default {
   name: 'App',
   components: {
     CharCreate,
+    CharacterBasics,
     AbilityScores
   }
 }
