@@ -32,8 +32,7 @@ export default {
   },
   methods:{
     generateAbilityScores() {
-        alert(this.inputValue);
-        console.log(this.inputValue);
+        alert("Ability scores here");
     }
   }
 };

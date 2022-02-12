@@ -1,5 +1,4 @@
 <!--Steps based on 5th Edition Player Handbook character creation-->
-
 <template>
   <div>
     <p>Character Creator</p>
