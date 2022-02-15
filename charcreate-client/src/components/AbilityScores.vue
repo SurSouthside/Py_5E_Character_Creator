@@ -1,5 +1,16 @@
 <template>
-   <span>Ability Scores</span><button @click="generateAbilityScores(); generateAbilityScore()">Generate Ability Scores</button>
+   <span>Ability Scores</span>
+    <br/>
+    <input type="radio" id="abilitygen_3d6" value="3d6" v-model="abilitygentype">
+    <label for="abilitygen_3d6">3d6</label>
+    <input type="radio" id="abilitygen_4d6" value="4d6" v-model="abilitygentype">
+    <label for="abilitygen_4d6">4d6 drop lowest</label>
+    <input type="radio" id="abilitygen_point_buy" value="point_buy" v-model="abilitygentype">
+    <label for="abilitygen_point_buy">Point Buy</label>
+    <input type="radio" id="abilitygen_random" value="random" v-model="abilitygentype">
+    <label for="abilitygen_random">Random</label>
+    <br/>
+    <button @click="generateAbilityScores(); generateAbilityScore()">Generate Ability Scores</button>
     <br/>
     <label for="charcreate_str">Strength:</label>
     <input type="text" id="charcreate_str"/>
