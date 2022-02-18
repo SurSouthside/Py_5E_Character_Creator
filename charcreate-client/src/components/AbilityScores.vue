@@ -53,41 +53,56 @@ export default {
         this.intScore = 0;
         this.wisScore = 0;
         this.chaScore = 0;
+
+        var strRoll = 0;
+        var dexRoll = 0;
+        var conRoll = 0;
+        var intRoll = 0;
+        var wisRoll = 0;
+        var chaRoll = 0;
+
+        var strScoreArray = [];
+        //var dexScoreArray = [];
+        //var conScoreArray = [];
+        //var intScoreArray = [];
+        //var wisScoreArray = [];
+        //var chaScoreArray = [];
+
         switch(this.abilityGenType) {
          case '3d6':
           //alert("3d6");
           for(let i = 0; i < 3; i++) {
-           var strRoll = Math.floor(Math.random() * (this.diceMax - this.diceMin) + this.diceMin);
+           strRoll = Math.floor(Math.random() * (this.diceMax - this.diceMin) + this.diceMin);
            //alert("Dice roll: " + strRoll);
            this.strScore = this.strScore + strRoll;
            //alert("Strength score: " + this.strScore);
           }
           for(let i = 0; i < 3; i++) {
-           var dexRoll = Math.floor(Math.random() * (this.diceMax - this.diceMin) + this.diceMin);
+           dexRoll = Math.floor(Math.random() * (this.diceMax - this.diceMin) + this.diceMin);
            //alert("Dice roll: " + dexRoll);
            this.dexScore = this.dexScore + dexRoll;
            //alert("Dexterity score: " + this.dexScore);
           }
           for(let i = 0; i < 3; i++) {
-           var conRoll = Math.floor(Math.random() * (this.diceMax - this.diceMin) + this.diceMin);
+           conRoll = Math.floor(Math.random() * (this.diceMax - this.diceMin) + this.diceMin);
            //alert("Dice roll: " + conRoll);
            this.conScore = this.conScore + conRoll;
            //alert("Constitution score: " + this.conScore);
           }
           for(let i = 0; i < 3; i++) {
-           var intRoll = Math.floor(Math.random() * (this.diceMax - this.diceMin) + this.diceMin);
+           intRoll = Math.floor(Math.random() * (this.diceMax - this.diceMin) + this.diceMin);
            //alert("Dice roll: " + intRoll);
            this.intScore = this.intScore + intRoll;
            //alert("Intelligence score: " + this.intScore);
           }
           for(let i = 0; i < 3; i++) {
-           var wisRoll = Math.floor(Math.random() * (this.diceMax - this.diceMin) + this.diceMin);
+           wisRoll = Math.floor(Math.random() * (this.diceMax - this.diceMin) + this.diceMin);
            //alert("Dice roll: " + wisRoll);
            this.wisScore = this.wisScore + wisRoll;
            //alert("Wisdom score: " + this.wisScore);
           }   
           for(let i = 0; i < 3; i++) {
-           var chaRoll = Math.floor(Math.random() * (this.diceMax - this.diceMin) + this.diceMin);
+           chaRoll = Math.floor(Math.random() * (this.diceMax - this.diceMin) + this.diceMin);
            //alert("Dice roll: " + chaRoll);
            this.chaScore = this.chaScore + chaRoll;
            //alert("Charisma score: " + this.chaScore);
@@ -95,6 +110,20 @@ export default {
           break;
          case '4d6':
           alert("4d6");
+          for(let i = 0; i < 4; i++) {
+           strRoll = Math.floor(Math.random() * (this.diceMax - this.diceMin) + this.diceMin);
+           alert("Dice roll: " + strRoll);
+           strScoreArray.push(strRoll);
+           alert("Strength score: " + strScoreArray.reduce(function (previousValue, currentValue) {
+            return previousValue + currentValue }, 0));
+           }
+           var minRoll = Math.min.apply(null,strScoreArray)
+           alert("Lowest roll: " + minRoll);
+           var minRollIndex = strScoreArray.indexOf(minRoll);
+           alert("Lowest roll index: " + minRollIndex);
+           strScoreArray = strScoreArray.splice(minRollIndex, 1);
+           this.strScore = strScoreArray.reduce((partialSum, a) => partialSum + a, 0);
+           alert("Strength score: " + this.strScore);
           break;
          case 'point_buy':
           alert("point_buy");
