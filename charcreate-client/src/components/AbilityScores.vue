@@ -61,46 +61,61 @@ export default {
         var wisRoll = 0;
         var chaRoll = 0;
 
+        var minRoll = 0;
+        var minRollIndex = 0;
+
         var strScoreArray = [];
-        //var dexScoreArray = [];
-        //var conScoreArray = [];
-        //var intScoreArray = [];
-        //var wisScoreArray = [];
-        //var chaScoreArray = [];
+        var dexScoreArray = [];
+        var conScoreArray = [];
+        var intScoreArray = [];
+        var wisScoreArray = [];
+        var chaScoreArray = [];
 
         switch(this.abilityGenType) {
          case '3d6':
           //alert("3d6");
+
+          //STR
           for(let i = 0; i < 3; i++) {
            strRoll = Math.floor(Math.random() * (this.diceMax - this.diceMin) + this.diceMin);
            //alert("Dice roll: " + strRoll);
            this.strScore = this.strScore + strRoll;
            //alert("Strength score: " + this.strScore);
           }
+
+          //DEX
           for(let i = 0; i < 3; i++) {
            dexRoll = Math.floor(Math.random() * (this.diceMax - this.diceMin) + this.diceMin);
            //alert("Dice roll: " + dexRoll);
            this.dexScore = this.dexScore + dexRoll;
            //alert("Dexterity score: " + this.dexScore);
           }
+
+          //CON
           for(let i = 0; i < 3; i++) {
            conRoll = Math.floor(Math.random() * (this.diceMax - this.diceMin) + this.diceMin);
            //alert("Dice roll: " + conRoll);
            this.conScore = this.conScore + conRoll;
            //alert("Constitution score: " + this.conScore);
           }
+
+          //INT
           for(let i = 0; i < 3; i++) {
            intRoll = Math.floor(Math.random() * (this.diceMax - this.diceMin) + this.diceMin);
            //alert("Dice roll: " + intRoll);
            this.intScore = this.intScore + intRoll;
            //alert("Intelligence score: " + this.intScore);
           }
+
+          //WIS
           for(let i = 0; i < 3; i++) {
            wisRoll = Math.floor(Math.random() * (this.diceMax - this.diceMin) + this.diceMin);
            //alert("Dice roll: " + wisRoll);
            this.wisScore = this.wisScore + wisRoll;
            //alert("Wisdom score: " + this.wisScore);
-          }   
+          }
+
+          //CHA
           for(let i = 0; i < 3; i++) {
            chaRoll = Math.floor(Math.random() * (this.diceMax - this.diceMin) + this.diceMin);
            //alert("Dice roll: " + chaRoll);
@@ -110,20 +125,104 @@ export default {
           break;
          case '4d6':
           alert("4d6");
+
+          //STR
           for(let i = 0; i < 4; i++) {
-           strRoll = Math.floor(Math.random() * (this.diceMax - this.diceMin) + this.diceMin);
-           alert("Dice roll: " + strRoll);
-           strScoreArray.push(strRoll);
-           alert("Strength score: " + strScoreArray.reduce(function (previousValue, currentValue) {
-            return previousValue + currentValue }, 0));
+            strRoll = Math.floor(Math.random() * (this.diceMax - this.diceMin) + this.diceMin);
+            //alert("Dice roll: " + strRoll);
+            strScoreArray.push(strRoll);
+            //alert("Strength score: " + strScoreArray.reduce(function (previousValue, currentValue) {
+             //return previousValue + currentValue }, 0));
            }
-           var minRoll = Math.min.apply(null,strScoreArray)
-           alert("Lowest roll: " + minRoll);
-           var minRollIndex = strScoreArray.indexOf(minRoll);
-           alert("Lowest roll index: " + minRollIndex);
-           strScoreArray = strScoreArray.splice(minRollIndex, 1);
+           minRoll = Math.min.apply(null,strScoreArray)
+           //alert("Lowest roll: " + minRoll);
+           minRollIndex = strScoreArray.indexOf(minRoll);
+           //alert("Lowest roll index: " + minRollIndex);
+           strScoreArray.splice(minRollIndex, 1);
            this.strScore = strScoreArray.reduce((partialSum, a) => partialSum + a, 0);
-           alert("Strength score: " + this.strScore);
+           //alert("Strength score: " + this.strScore);
+
+          //DEX
+          for(let i = 0; i < 4; i++) {
+            dexRoll = Math.floor(Math.random() * (this.diceMax - this.diceMin) + this.diceMin);
+            //alert("Dice roll: " + dexRoll);
+            dexScoreArray.push(dexRoll);
+            //alert("Dexterity score: " + dexScoreArray.reduce(function (previousValue, currentValue) {
+             //return previousValue + currentValue }, 0));
+           }
+           minRoll = Math.min.apply(null,dexScoreArray)
+           //alert("Lowest roll: " + minRoll);
+           minRollIndex = dexScoreArray.indexOf(minRoll);
+           //alert("Lowest roll index: " + minRollIndex);
+           dexScoreArray.splice(minRollIndex, 1);
+           this.dexScore = dexScoreArray.reduce((partialSum, a) => partialSum + a, 0);
+           //alert("Dexterity score: " + this.dexScore);
+           
+          //CON
+          for(let i = 0; i < 4; i++) {
+            conRoll = Math.floor(Math.random() * (this.diceMax - this.diceMin) + this.diceMin);
+            //alert("Dice roll: " + conRoll);
+            conScoreArray.push(conRoll);
+            //alert("Constitution score: " + conScoreArray.reduce(function (previousValue, currentValue) {
+             //return previousValue + currentValue }, 0));
+           }
+           minRoll = Math.min.apply(null,conScoreArray)
+           //alert("Lowest roll: " + minRoll);
+           minRollIndex = conScoreArray.indexOf(minRoll);
+           //alert("Lowest roll index: " + minRollIndex);
+           conScoreArray.splice(minRollIndex, 1);
+           this.conScore = conScoreArray.reduce((partialSum, a) => partialSum + a, 0);
+           //alert("Constitution score: " + this.conScore);
+           
+          //INT
+          for(let i = 0; i < 4; i++) {
+            intRoll = Math.floor(Math.random() * (this.diceMax - this.diceMin) + this.diceMin);
+            //alert("Dice roll: " + intRoll);
+            intScoreArray.push(intRoll);
+            //alert("Intelligence score: " + intScoreArray.reduce(function (previousValue, currentValue) {
+             //return previousValue + currentValue }, 0));
+           }
+           minRoll = Math.min.apply(null,intScoreArray)
+           //alert("Lowest roll: " + minRoll);
+           minRollIndex = intScoreArray.indexOf(minRoll);
+           //alert("Lowest roll index: " + minRollIndex);
+           intScoreArray.splice(minRollIndex, 1);
+           this.intScore = intScoreArray.reduce((partialSum, a) => partialSum + a, 0);
+           //alert("Intelligence score: " + this.intScore);
+           
+           
+          //WIS
+          for(let i = 0; i < 4; i++) {
+            wisRoll = Math.floor(Math.random() * (this.diceMax - this.diceMin) + this.diceMin);
+            //alert("Dice roll: " + wisRoll);
+            wisScoreArray.push(wisRoll);
+            //alert("Wisdom score: " + wisScoreArray.reduce(function (previousValue, currentValue) {
+             //return previousValue + currentValue }, 0));
+           }
+           minRoll = Math.min.apply(null,wisScoreArray)
+           //alert("Lowest roll: " + minRoll);
+           minRollIndex = wisScoreArray.indexOf(minRoll);
+           //alert("Lowest roll index: " + minRollIndex);
+           wisScoreArray.splice(minRollIndex, 1);
+           this.wisScore = wisScoreArray.reduce((partialSum, a) => partialSum + a, 0);
+           //alert("Wisdom score: " + this.wisScore);
+
+          //CHA
+          for(let i = 0; i < 4; i++) {
+            chaRoll = Math.floor(Math.random() * (this.diceMax - this.diceMin) + this.diceMin);
+            //alert("Dice roll: " + chaRoll);
+            chaScoreArray.push(chaRoll);
+            //alert("Charisma score: " + chaScoreArray.reduce(function (previousValue, currentValue) {
+             //return previousValue + currentValue }, 0));
+           }
+           minRoll = Math.min.apply(null,chaScoreArray)
+           //alert("Lowest roll: " + minRoll);
+           minRollIndex = chaScoreArray.indexOf(minRoll);
+           //alert("Lowest roll index: " + minRollIndex);
+           chaScoreArray.splice(minRollIndex, 1);
+           this.chaScore = chaScoreArray.reduce((partialSum, a) => partialSum + a, 0);
+           //alert("Charisma score: " + this.chaScore);
+
           break;
          case 'point_buy':
           alert("point_buy");
