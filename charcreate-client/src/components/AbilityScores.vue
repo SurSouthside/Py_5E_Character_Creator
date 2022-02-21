@@ -12,6 +12,8 @@
     <br/>
     <button @click="generateAbilityScores(); generateAbilityScore()">Generate Ability Scores</button>
     <br/>
+    <!--TODO: Show point buy explanation when point_buy radio selected-->
+    <!--TODO: Disable 'Generate Ability Scores' button when point_buy radio selected?-->
     <label for="charcreate_str">Strength:</label>
     <input type="text" id="charcreate_str" v-model="strScore"/>
     <label for="charcreate_dex">Dexterity:</label>
@@ -37,6 +39,7 @@ export default {
         diceMax: 7, //Account for off-by-one
         randomMin: 1,
         randomMax: 21, //Account for off-by-one
+        pointBuyLimit: 27,
         abilityGenType: "",
         strScore: 0,
         dexScore: 0,
@@ -228,6 +231,12 @@ export default {
           break;
          case 'point_buy':
           alert("point_buy");
+          this.strScore = 8;
+          this.dexScore = 8;
+          this.conScore = 8;
+          this.intScore = 8;
+          this.wisScore = 8;
+          this.chaScore = 8;
           break;
          case 'random':
           alert("random");
