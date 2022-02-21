@@ -35,6 +35,8 @@ export default {
     return {
         diceMin: 1,
         diceMax: 7, //Account for off-by-one
+        randomMin: 1,
+        randomMax: 21, //Account for off-by-one
         abilityGenType: "",
         strScore: 0,
         dexScore: 0,
@@ -228,7 +230,13 @@ export default {
           alert("point_buy");
           break;
          case 'random':
-          alert("4d6");
+          alert("random");
+          this.strScore = Math.floor(Math.random() * (this.randomMax - this.randomMin) + this.randomMin);
+          this.dexScore = Math.floor(Math.random() * (this.randomMax - this.randomMin) + this.randomMin);
+          this.conScore = Math.floor(Math.random() * (this.randomMax - this.randomMin) + this.randomMin);
+          this.intScore = Math.floor(Math.random() * (this.randomMax - this.randomMin) + this.randomMin);
+          this.wisScore = Math.floor(Math.random() * (this.randomMax - this.randomMin) + this.randomMin);
+          this.chaScore = Math.floor(Math.random() * (this.randomMax - this.randomMin) + this.randomMin);
           break;
          default:
           alert('No method selected');
