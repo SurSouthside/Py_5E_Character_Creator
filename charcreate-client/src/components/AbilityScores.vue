@@ -12,7 +12,8 @@
     <br/>
     <button @click="generateAbilityScores(); generateAbilityScore()">Generate Ability Scores</button>
     <br/>
-    <!--TODO: Show point buy explanation when point_buy radio selected-->
+    <div v-if="abilityGenType === 'point_buy'">Point-Buy Explanation</div>
+    <br/>
     <!--TODO: Disable 'Generate Ability Scores' button when point_buy radio selected?-->
     <label for="charcreate_str">Strength:</label>
     <input type="text" id="charcreate_str" v-model="strScore"/>
@@ -129,7 +130,7 @@ export default {
           }                        
           break;
          case '4d6':
-          alert("4d6");
+          //alert("4d6");
 
           //STR
           for(let i = 0; i < 4; i++) {
@@ -239,7 +240,7 @@ export default {
           this.chaScore = 8;
           break;
          case 'random':
-          alert("random");
+          //alert("random");
           this.strScore = Math.floor(Math.random() * (this.randomMax - this.randomMin) + this.randomMin);
           this.dexScore = Math.floor(Math.random() * (this.randomMax - this.randomMin) + this.randomMin);
           this.conScore = Math.floor(Math.random() * (this.randomMax - this.randomMin) + this.randomMin);
