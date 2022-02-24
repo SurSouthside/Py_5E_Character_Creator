@@ -10,7 +10,7 @@
     <input type="radio" id="abilitygen_random" value="random" name="abilityGenType" v-model="abilityGenType">
     <label for="abilitygen_random">Random</label>
     <br/>
-    <button @click="generateAbilityScores(); generateAbilityScore()">Generate Ability Scores</button>
+    <button v-if="abilityGenType !== 'point_buy'" @click="generateAbilityScores(); generateAbilityScore()">Generate Ability Scores</button>
     <br/>
     <div v-if="abilityGenType === 'point_buy'">Point-Buy Explanation</div>
     <br/>
