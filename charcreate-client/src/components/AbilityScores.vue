@@ -12,7 +12,9 @@
     <br/>
     <button v-if="abilityGenType !== 'point_buy'" @click="generateAbilityScores(); generateAbilityScore()">Generate Ability Scores</button>
     <br/>
-    <div v-if="abilityGenType === 'point_buy'">Point-Buy Explanation</div>
+    <div v-if="abilityGenType === 'point_buy'">
+     <PointBuy></PointBuy>
+    </div>
     <br/>
     <!--TODO: Disable 'Generate Ability Scores' button when point_buy radio selected?-->
     <label for="charcreate_str">Strength:</label>
@@ -32,8 +34,14 @@
 </template>
 
 <script>
+
+import PointBuy from './PointBuy.vue'
+
 export default {
   name: 'AbilityScores',
+  components: {
+    PointBuy
+  },
   data(){
     return {
         diceMin: 1,
