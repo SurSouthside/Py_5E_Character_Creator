@@ -48,12 +48,21 @@
             </tr>
         </tbody>
     </table>
+    <label for="pointbuy_bank">Available Points:</label>
+    <input type="text" id="pointbuy_bank" readonly="readonly" v-model="pointBuyAvailable"/>
 </template>
 
 
 <script>
 export default {
-    name: 'PointBuy'
+  name: 'PointBuy',
+  data(){
+    return {
+        pointBuyMin: 0,
+        pointBuyMax: 27,
+        pointBuyAvailable: 27
+    }
+  },
 }
 </script>
 
