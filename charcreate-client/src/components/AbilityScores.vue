@@ -1,13 +1,13 @@
 <template>
    <span>Ability Scores</span>
     <br/>
-    <input type="radio" id="abilitygen_3d6" value="3d6" name="abilityGenType" v-model="abilityGenType">
+    <input type="radio" id="abilitygen_3d6" value="3d6" name="abilityGenType" v-model="abilityGenType" @change="resetScores()">
     <label for="abilitygen_3d6">3d6</label>
-    <input type="radio" id="abilitygen_4d6" value="4d6" name="abilityGenType" v-model="abilityGenType">
+    <input type="radio" id="abilitygen_4d6" value="4d6" name="abilityGenType" v-model="abilityGenType" @change="resetScores()">
     <label for="abilitygen_4d6">4d6 drop lowest</label>
     <input type="radio" id="abilitygen_point_buy" value="point_buy" name="abilityGenType" v-model="abilityGenType" @change="setPointBuy()">
     <label for="abilitygen_point_buy">Point Buy</label>
-    <input type="radio" id="abilitygen_random" value="random" name="abilityGenType" v-model="abilityGenType">
+    <input type="radio" id="abilitygen_random" value="random" name="abilityGenType" v-model="abilityGenType" @change="resetScores()">
     <label for="abilitygen_random">Random</label>
     <br/>
     <button v-if="abilityGenType !== 'point_buy'" @click="generateAbilityScores(); generateAbilityScore()">Generate Ability Scores</button>
@@ -262,6 +262,14 @@ export default {
       this.intScore = 8;
       this.wisScore = 8;
       this.chaScore = 8;
+    },
+    resetScores(){
+      this.strScore = 0;
+      this.dexScore = 0;
+      this.conScore = 0;
+      this.intScore = 0;
+      this.wisScore = 0;
+      this.chaScore = 0;
     }
   }
 };
