@@ -60,7 +60,9 @@ export default {
     return {
         pointBuyMin: 0,
         pointBuyMax: 27,
-        pointBuyAvailable: 27
+        pointBuyAvailable: 27,
+        abilityScoreMin: 8,
+        abilityScoreMax: 15
     }
   },
 }

@@ -5,7 +5,7 @@
     <label for="abilitygen_3d6">3d6</label>
     <input type="radio" id="abilitygen_4d6" value="4d6" name="abilityGenType" v-model="abilityGenType">
     <label for="abilitygen_4d6">4d6 drop lowest</label>
-    <input type="radio" id="abilitygen_point_buy" value="point_buy" name="abilityGenType" v-model="abilityGenType">
+    <input type="radio" id="abilitygen_point_buy" value="point_buy" name="abilityGenType" v-model="abilityGenType" @change="setPointBuy()">
     <label for="abilitygen_point_buy">Point Buy</label>
     <input type="radio" id="abilitygen_random" value="random" name="abilityGenType" v-model="abilityGenType">
     <label for="abilitygen_random">Random</label>
@@ -239,13 +239,6 @@ export default {
 
           break;
          case 'point_buy':
-          alert("point_buy");
-          this.strScore = 8;
-          this.dexScore = 8;
-          this.conScore = 8;
-          this.intScore = 8;
-          this.wisScore = 8;
-          this.chaScore = 8;
           break;
          case 'random':
           //alert("random");
@@ -260,6 +253,15 @@ export default {
           alert('No method selected');
           break;
         }
+    },
+    setPointBuy() {
+      //alert("Point buy");
+      this.strScore = 8;
+      this.dexScore = 8;
+      this.conScore = 8;
+      this.intScore = 8;
+      this.wisScore = 8;
+      this.chaScore = 8;
     }
   }
 };
