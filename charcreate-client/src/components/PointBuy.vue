@@ -49,18 +49,21 @@
         </tbody>
     </table>
     <label for="pointbuy_bank">Available Points:</label>
-    <input type="text" id="pointbuy_bank" readonly="readonly" v-model="pointBuyAvailable"/>
+    <span id="pointbuy_bank">{{pointBuyAvailable}}</span>
+    <!--<input type="text" id="pointbuy_bank" readonly="readonly" v-model="pointBuyAvailable"/>-->
 </template>
 
 
 <script>
 export default {
   name: 'PointBuy',
+  props: {
+    pointBuyAvailable: String
+  },
   data(){
     return {
         pointBuyMin: 0,
         pointBuyMax: 27,
-        pointBuyAvailable: 27,
         abilityScoreMin: 8,
         abilityScoreMax: 15
     }

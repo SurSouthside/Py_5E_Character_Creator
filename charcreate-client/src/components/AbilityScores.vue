@@ -13,7 +13,7 @@
     <button v-if="abilityGenType !== 'point_buy'" @click="generateAbilityScores(); generateAbilityScore()">Generate Ability Scores</button>
     <br/>
     <div v-if="abilityGenType === 'point_buy'">
-     <PointBuy></PointBuy>
+     <PointBuy :pointBuyAvailable="pointBuyAvailable"></PointBuy>
     </div>
     <br/>
     <!--TODO: Disable 'Generate Ability Scores' button when point_buy radio selected?-->
@@ -49,6 +49,7 @@ export default {
         randomMin: 1,
         randomMax: 21, //Account for off-by-one
         pointBuyLimit: 27,
+        pointBuyAvailable: 27,
         abilityGenType: "",
         strScore: 0,
         dexScore: 0,
